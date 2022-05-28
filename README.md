@@ -111,10 +111,21 @@ Starting with basic example in sequential logic is Fibonacci Series with reset. 
 
 # Pipelined Logic 
 Timing abstract powerful feature of TL-Verilog which converts a code into pipeline stages easily
+* This is a place where TLV Shines bright. All us Verilog users have faced the endless pains of pipelining and fails. In both the calculator and the cpu core we have used pipelines
+* Defined with a '|' symbol
+* Within the Pipeline, multiple stages can be defined using '@'
+* This concept is called Time Abstraction
 
 * 2-cycle calculator which clears the output alternatively and output of given inputs are observed at the next cycle.
 ![21](https://user-images.githubusercontent.com/88897605/170719820-9a484354-db42-45c2-ad08-e09d9b767275.jpg)
 
 ## Validity
+
+* NOTE: This functionality is not a part of other circuit design languages and is exclusive to TLV
+* This will make no difference on the nature of the code to be honest. In usual processes, these would all be not care
+* It basically decides when a signal has significance, so it is only executed then.
+* This keeps the Waveform clean and easy to debug
+* You will see this operator being used '?' throughout the CPU Code.
+
 ![21_v](https://user-images.githubusercontent.com/88897605/170719922-4f8432ad-6024-48d3-a45b-2359a305acc2.jpg)
 
