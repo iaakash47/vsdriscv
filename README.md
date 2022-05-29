@@ -172,7 +172,8 @@ Timing abstract powerful feature of TL-Verilog which converts a code into pipeli
 * Within the Pipeline, multiple stages can be defined using '@'
 * This concept is called Time Abstraction
 
-* 2-cycle calculator which clears the output alternatively and output of given inputs are observed at the next cycle.
+## 2-cycle calculator
+* which clears the output alternatively and output of given inputs are observed at the next cycle.
 ![2cyclewithout_validity](https://user-images.githubusercontent.com/88897605/170883845-2d70e636-3dd8-4b44-ae90-51e2a57cffc4.png)
 
 
@@ -185,7 +186,7 @@ Timing abstract powerful feature of TL-Verilog which converts a code into pipeli
 * You will see this operator being used '?' throughout the CPU Code.
 
 
-* 2-cycle calculator with validity
+## 2-cycle calculator with validity
 
 ![2cycle_with_validity](https://user-images.githubusercontent.com/88897605/170883883-9e8d5296-d73f-4351-95f0-01ab8b344d03.png)
 
