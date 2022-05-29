@@ -13,10 +13,21 @@ My Project Repository for RISC-V MYTH ( Microprocessor for You in Thirty Hours) 
 - [Brief of GNU compiler toolchain](#brief-of-gnu-compiler-toolchain)
 - [Introduction to ABI](#introduction-to-abi)
 - [Digital Logic with TL-Verilog and Makerchip](#digital-logic-with-tl-verilog-and-makerchip)
-  - [Combinational logic](#combinational-logic)
-  - [Sequential logic](#sequential-logic)
-  - [Pipelined logic](#pipelined-logic)
-  - [Validity](#validity)
+- [Combinational Logic](#combinational-logic)
+    - [Inverter](#inverter)
+    - [Binary Addition](#binary-addition)
+    - [Multiplexer](#multiplexer)
+    - [Combinational Calculator](#combinational-calculator)
+- [Sequential Logic](#sequential-logic)
+    - [Fibonacci Sequence](#fibonacci-sequence)
+    - [Counter](#counter)
+    - [Sequential Calculator](#sequential-calculator)
+- [Pipelined Logic](#pipelined-logic)
+    - [Representing Pipelined Logic](#representing-pipelined-logic)
+    - [2-Cycle Calculator](#2-cycle-calculator)
+- [Validity](#validity)
+    - [Total Distance](#total-distance)
+    - [2-Cycle Calculator With Validity](#2-cycle-calculator-with-validity)
 - [Basic RISC-V CPU micro-architecture](#basic-risc-v-cpu-micro-architecture)
   - [Fetch](#fetch)
   - [Decode](#decode)
@@ -99,12 +110,29 @@ Below images show the toolchain implementation for a small c program for sum of 
 
 #### Test Case for the above commands
 
+Below image shows how to debug the disassembled file using Spike simulator where a1,a2 register are checked before and after the instructions got executed
+
+![sum1ton c](https://user-images.githubusercontent.com/88897605/170884840-c85cb0d7-75c4-4d12-81a2-4339b37899cb.png)
+
 ![sum1ton11](https://user-images.githubusercontent.com/88897605/170711445-906a8c49-43d8-4969-b20a-e3be6b7cfd55.png)
+
+
+* Subtraction
+
+![subtraction](https://user-images.githubusercontent.com/88897605/170885111-64140445-b378-48a5-be1b-5d2bf21c2a46.png)
+
 
 To view the registers we can use command as ```reg <core> <register name>.```
 
-Below image shows how to debug the disassembled file using Spike simulator where a1,a2 register are checked before and after the instructions got executed
-![cat_sum1ton](https://user-images.githubusercontent.com/88897605/170712081-2fbb779e-2727-4b08-957d-739c1b6c5d16.png)
+* Unsigned number lab
+
+![program_unsignedhighest](https://user-images.githubusercontent.com/88897605/170884917-e0aacb65-75bd-468b-aec8-055676951ce4.png)
+
+![unsignedhighest_output](https://user-images.githubusercontent.com/88897605/170884915-36a78fbb-a096-4205-b0fc-730414d9f336.png)
+
+
+
+
 
 
 # Digital Logic with TL-Verilog and Makerchip
@@ -115,15 +143,14 @@ An Application Binary Interface would combine the processor ISA along with the O
 
 
 # Combinational Logic
-Starting with basic example in combinational logic is an inverter. To write the logic of inverter using TL-verilog is 
-```
-$out = ! $in;
-```
 
-* There is no need to declare
-```
-$out and $in unlike Verilog
-```
+* Starting with basic example in combinational logic is an inverter.
+* To write the logic of inverter using TL-verilog is $out = ! $in;.
+* There is no need to declare $out and $in unlike Verilog. There is also no need to assign $in.
+* Random stimulus is provided, and a warning is produced.
+
+## Inverter
+
 ![inverter](https://user-images.githubusercontent.com/88897605/170883560-11084290-f4ca-4780-8ff6-18cf2900fbb8.png)
 
 # Binary Addition
@@ -148,7 +175,7 @@ There is also no need to assign ``` $in``` Random stimulus is provided, and a wa
 # Sequential logic
 Starting with basic example in sequential logic is Fibonacci Series with reset. To write the logic of Series using TL-Verilog is ``` $num[31:0] = $reset ? 1 : (>>1$num + >>2$num).``` This operator >>? is ahead of operator which will provide the value of that signal 1 cycle before and 2 cycle before respectively.
 
-## Fibonacci Series with reset
+## Fibonacci Sequence
 
 Starting with basic example in sequential logic is Fibonacci Series with reset. To write the logic of Series using TL-Verilog is ``` $num[31:0] = $reset ? 1 : (>>1$num + >>2$num).``` This operator >>? is ahead of operator which will provide the value of that signal 1 cycle before and 2 cycle before respectively.
 
@@ -161,7 +188,7 @@ A device which stores (and sometimes displays) the number of times a particular 
 
 ![counter](https://user-images.githubusercontent.com/88897605/170883800-4561321f-b33c-4be4-8110-fda711743225.png)
 
- Sequential Calculator Shown below
+## Sequential Calculator 
  
  ![srq](https://user-images.githubusercontent.com/88897605/170718723-5e6c51c9-63d7-40fd-920f-279f2ea6ff9c.jpg)
 
@@ -171,6 +198,10 @@ Timing abstract powerful feature of TL-Verilog which converts a code into pipeli
 * Defined with a '|' symbol
 * Within the Pipeline, multiple stages can be defined using '@'
 * This concept is called Time Abstraction
+
+## Representing Pipelined Logic
+
+![pipeline_1](https://user-images.githubusercontent.com/88897605/170884612-3fe08d71-3f35-4bd7-ae42-11c3f3cbff2f.png)
 
 ## 2-cycle calculator
 * which clears the output alternatively and output of given inputs are observed at the next cycle.
