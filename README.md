@@ -2,9 +2,11 @@
 
 [![](https://img.shields.io/badge/-RISC--V-red "RISC-V")](https://riscv.org/) [![](https://img.shields.io/badge/-TL--Verilog-blue "TL-Verilog")](https://tl-x.org/) 
 
-![myth_banner](https://user-images.githubusercontent.com/88897605/170865437-56aa5203-f1dd-448a-8910-33d4f0899ed5.png)
 
-My Project Repository for RISC-V MYTH ( Microprocessor for You in Thirty Hours) workshop, conducted by VSD Corp and Redwood EDA.This workshop was conducted over a period of 5 days and in this short span of time we were able to understand & implement a RISC-V core with base instruction set. Programming language used in the software section was with TL-Verilog for HDL implementation.Tools used: Spike and Makerchip IDE.This repository contains all the information needed to build your RISC-V pipelined core, which has support of base interger RV32I instruction format using TL-Verilog on makerchip platform
+* My Project Repository for RISC-V MYTH ( Microprocessor for You in Thirty Hours)
+* Programming language used in the software section was with TL-Verilog for HDL implementation.
+* Tools used: Spike and Makerchip IDE.
+* This repository contains all the information needed to build your RISC-V pipelined core, which has support of base interger RV32I instruction format using TL-Verilog on makerchip platform
 
 
 # Table of Contents
