@@ -124,8 +124,23 @@ $out = ! $in;
 ```
 $out and $in unlike Verilog
 ```
+![inverter](https://user-images.githubusercontent.com/88897605/170883560-11084290-f4ca-4780-8ff6-18cf2900fbb8.png)
+
+# Binary Addition
+
+![binary+addition](https://user-images.githubusercontent.com/88897605/170883599-a8748b2b-0cc1-4958-8153-5f32780cfeb9.png)
+
+# Multiplexer
+![multiplexer](https://user-images.githubusercontent.com/88897605/170883617-2bd06479-dc96-4c78-97a8-bff4e2eb33c8.png)
+
 
 There is also no need to assign ``` $in``` Random stimulus is provided, and a warning is produced.
+
+# Combinational Calculator
+
+* A simple implementation of a single stage basic calculator is done in TL-Verilog.
+* The calculator will have two 32-bit input data and one 3-bit opcode.
+* Depending upon the opcode value, calculator operation is selected\
 
 ![IMG_20220527_194822](https://user-images.githubusercontent.com/88897605/170717943-aff0f3e1-6ed0-4be8-8fed-c348f405edc1.jpg)
 
@@ -133,7 +148,21 @@ There is also no need to assign ``` $in``` Random stimulus is provided, and a wa
 # Sequential logic
 Starting with basic example in sequential logic is Fibonacci Series with reset. To write the logic of Series using TL-Verilog is ``` $num[31:0] = $reset ? 1 : (>>1$num + >>2$num).``` This operator >>? is ahead of operator which will provide the value of that signal 1 cycle before and 2 cycle before respectively.
 
- Sequential Calculator Shown Below
+## Fibonacci Series with reset
+
+Starting with basic example in sequential logic is Fibonacci Series with reset. To write the logic of Series using TL-Verilog is ``` $num[31:0] = $reset ? 1 : (>>1$num + >>2$num).``` This operator >>? is ahead of operator which will provide the value of that signal 1 cycle before and 2 cycle before respectively.
+
+![fibonosis](https://user-images.githubusercontent.com/88897605/170883711-d048d345-8e75-4df7-882d-499eb4ec3b8a.png)
+
+
+## Counter
+
+A device which stores (and sometimes displays) the number of times a particular event or process has occurred, often in relationship to a clock
+
+![counter](https://user-images.githubusercontent.com/88897605/170883800-4561321f-b33c-4be4-8110-fda711743225.png)
+
+ Sequential Calculator Shown below
+ 
  ![srq](https://user-images.githubusercontent.com/88897605/170718723-5e6c51c9-63d7-40fd-920f-279f2ea6ff9c.jpg)
 
 # Pipelined Logic 
@@ -144,7 +173,8 @@ Timing abstract powerful feature of TL-Verilog which converts a code into pipeli
 * This concept is called Time Abstraction
 
 * 2-cycle calculator which clears the output alternatively and output of given inputs are observed at the next cycle.
-![21](https://user-images.githubusercontent.com/88897605/170719820-9a484354-db42-45c2-ad08-e09d9b767275.jpg)
+![2cyclewithout_validity](https://user-images.githubusercontent.com/88897605/170883845-2d70e636-3dd8-4b44-ae90-51e2a57cffc4.png)
+
 
 ## Validity
 
@@ -154,9 +184,13 @@ Timing abstract powerful feature of TL-Verilog which converts a code into pipeli
 * This keeps the Waveform clean and easy to debug
 * You will see this operator being used '?' throughout the CPU Code.
 
-![21_v](https://user-images.githubusercontent.com/88897605/170719922-4f8432ad-6024-48d3-a45b-2359a305acc2.jpg)
 
+* 2-cycle calculator with validity
 
+![2cycle_with_validity](https://user-images.githubusercontent.com/88897605/170883883-9e8d5296-d73f-4351-95f0-01ab8b344d03.png)
+
+## Total Distance
+![total_distance](https://user-images.githubusercontent.com/88897605/170883959-9cd0fa20-9fcc-4206-a20f-c73efc0880e1.png)
 
 
 # Basic RISC-V CPU micro-architecture 
